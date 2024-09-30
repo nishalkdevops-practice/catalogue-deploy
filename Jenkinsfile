@@ -22,36 +22,38 @@ pipeline {
 
                 sh """
                     cd terraform 
-                    terraform init -reconfigure
+                    ls -lrt
+
+                
                     """
 
 
             }
         }
 
-        stage('Plan'){
-            steps{
+        // stage('Plan'){
+        //     steps{
 
-                sh """
-                    cd terraform 
-                    terraform plan
-                    """
-
-
-            }
-        }
-
-        stage('Apply'){
-            steps{
-
-                sh """
-                    cd terraform 
-                    terraform apply -auto-approve
-                    """
+        //         sh """
+        //             cd terraform 
+        //             terraform plan
+        //             """
 
 
-            }
-        }
+        //     }
+        // }
+
+        // stage('Apply'){
+        //     steps{
+
+        //         sh """
+        //             cd terraform 
+        //             terraform apply -auto-approve
+        //             """
+
+
+        //     }
+        // }
 
 
 
