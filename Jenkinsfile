@@ -7,7 +7,7 @@ pipeline {
 
                 echo "deploying for now......"
               }
-            }
+        }
     }
 
     post{
