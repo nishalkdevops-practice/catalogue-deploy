@@ -15,6 +15,47 @@ pipeline {
                 echo "version from params: ${params.version}"
               }
         }
+
+
+        stage('Initialize'){
+            steps{
+
+                sh """
+                    cd terraform 
+                    terraform init -reconfigure
+                    """
+
+
+            }
+        }
+
+        stage('Plan'){
+            steps{
+
+                sh """
+                    cd terraform 
+                    terraform plan
+                    """
+
+
+            }
+        }
+
+        stage('Apply'){
+            steps{
+
+                sh """
+                    cd terraform 
+                    terraform apply -auto-approve
+                    """
+
+
+            }
+        }
+
+
+
+
     }
 
     post{
