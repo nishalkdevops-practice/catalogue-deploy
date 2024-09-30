@@ -22,6 +22,7 @@ pipeline {
 
                 sh """
                     cd terraform 
+                    ls -lrt
                     terraform init -reconfigure
 
                 
