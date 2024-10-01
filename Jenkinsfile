@@ -1,5 +1,9 @@
 pipeline {
     agent { node { label 'Agent-1' } }
+
+    options {
+        ansiColor('xterm')
+    }
     
     parameters {
         string(name: 'version', defaultValue: '1.0.9', description: 'Which version to deploy?')
