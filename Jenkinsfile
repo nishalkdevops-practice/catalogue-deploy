@@ -23,7 +23,7 @@ pipeline {
                 sh """
                     cd terraform 
                     ls -lrt
-                    terraform init
+                    terraform init -reconfigure
 
                 
                     """
@@ -36,7 +36,7 @@ pipeline {
             steps{
 
                 sh """
-                
+                    cd terraform
                     terraform plan
                     """
 
@@ -48,7 +48,7 @@ pipeline {
             steps{
 
                 sh """
-                     
+                    cd terraform 
                     terraform apply -auto-approve
                     """
 
