@@ -44,29 +44,29 @@ pipeline {
             }
         }
 
-        stage('Apply'){
-            steps{
-
-                sh """
-                    cd terraform 
-                    terraform apply -auto-approve
-                    """
-
-
-            }
-        }
-
-        // stage('Destroy'){
+        // stage('Apply'){
         //     steps{
 
         //         sh """
         //             cd terraform 
-        //             terraform destroy -auto-approve
+        //             terraform apply -auto-approve
         //             """
 
 
         //     }
         // }
+
+        stage('Destroy'){
+            steps{
+
+                sh """
+                    cd terraform 
+                    terraform destroy -auto-approve
+                    """
+
+
+            }
+        }
 
 
 
