@@ -34,3 +34,8 @@ variable "common_tags" {
 variable "sg_tags" {
   default = {}
 }
+
+variable "app_version" {
+    default = "100.100.100"
+  
+}
