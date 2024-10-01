@@ -2,7 +2,7 @@ pipeline {
     agent { node { label 'Agent-1' } }
     
     parameters {
-        string(name: 'version', defaultValue: '1.0.1', description: 'Which version to deploy?')
+        string(name: 'version', defaultValue: '1.0.9', description: 'Which version to deploy?')
 
 
     }
@@ -50,6 +50,18 @@ pipeline {
                 sh """
                     cd terraform 
                     terraform apply -auto-approve
+                    """
+
+
+            }
+        }
+
+        stage('Destroy'){
+            steps{
+
+                sh """
+                    cd terraform 
+                    terraform destroy -auto-approve
                     """
 
 
