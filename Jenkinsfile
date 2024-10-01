@@ -56,17 +56,17 @@ pipeline {
             }
         }
 
-        stage('Destroy'){
-            steps{
+        // stage('Destroy'){
+        //     steps{
 
-                sh """
-                    cd terraform 
-                    terraform destroy -auto-approve
-                    """
+        //         sh """
+        //             cd terraform 
+        //             terraform destroy -auto-approve
+        //             """
 
 
-            }
-        }
+        //     }
+        // }
 
 
 
