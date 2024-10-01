@@ -5,7 +5,7 @@ module "catalogue_instance" {
   vpc_security_group_ids = [data.aws_ssm_parameter.catalogue_sg_id.value]
 
   #it should be provision in DB subnet 
-  subnet_id = split(data.aws_ssm_parameter.private_subnet_ids,0)
+  subnet_id = element(split(",",data.aws_ssm_parameter.private_subnet_ids.value), 0)
   //user_data = file("catalogue.sh")
   
   #the below is optional if we dont give this will be provisioned inside default subnet
