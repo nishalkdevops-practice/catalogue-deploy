@@ -39,3 +39,8 @@ variable "app_version" {
     default = "100.100.100"
   
 }
+
+variable "domain_name" {
+    default = "nishalkdevops.online"
+  
+}
