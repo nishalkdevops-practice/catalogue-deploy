@@ -80,7 +80,7 @@ pipeline {
 
         //         sh """
         //             cd terraform 
-        //             terraform destroy -auto-approve
+        //             terraform destroy -var="app_version=${params.version}" -auto-approve
         //             """
 
 
