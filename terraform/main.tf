@@ -6,6 +6,7 @@ module "catalogue_instance" {
 
   #it should be provision in DB subnet 
   subnet_id = element(split(",",data.aws_ssm_parameter.private_subnet_ids.value), 0)
+  iam_instance_profile = "catalogue_profile"
   //user_data = file("catalogue.sh")
   
   #the below is optional if we dont give this will be provisioned inside default subnet
