@@ -1,4 +1,4 @@
-project_name = "roboshop"
+project_name = "ROBOSHOP"
 env = "dev"
 common_tags = {
     
